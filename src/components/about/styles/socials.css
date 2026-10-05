@@ -1,36 +1,71 @@
 @import "../../../data/styles.css";
+
+/* =============================================
+   SOCIALS LIST
+   ============================================= */
+
+.socials {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
 .social,
 .email-wrapper {
 	display: flex;
-	padding-bottom: 20px;
+	align-items: center;
 }
 
 .social a,
 .email-wrapper a {
+	display: flex;
+	align-items: center;
+	gap: 14px;
 	text-decoration: none;
+	padding: 10px 12px;
+	border-radius: 10px;
+	transition: background-color 0.2s ease, color 0.2s ease;
+	width: 100%;
+}
+
+.social a:hover,
+.email-wrapper a:hover {
+	background-color: rgba(var(--accent-color-rgb), 0.08);
+}
+
+.social a:hover .social-icon,
+.email-wrapper a:hover .social-icon,
+.social a:hover .social-text,
+.email-wrapper a:hover .social-text {
+	color: var(--accent-color);
 }
 
 .social-icon {
-	font-size: 15px;
+	font-size: 18px;
 	color: var(--secondary-color);
+	flex-shrink: 0;
+	width: 20px;
+	text-align: center;
+	transition: color 0.2s ease;
 }
 
 .social-text {
 	color: var(--secondary-color);
-	padding-left: 30px;
-	margin-top: -20px;
-	font-weight: 600;
 	font-size: 14px;
+	font-weight: 500;
+	transition: color 0.2s ease;
 }
 
-.email::before {
-	content: "";
-	display: block;
-	padding-top: 20px;
-	border-top: 3px solid #f4f4f5;
-	margin-top: 20px;
+/* =============================================
+   EMAIL SEPARATOR
+   ============================================= */
+
+.email {
+	margin-top: 8px;
+	padding-top: 8px;
+	border-top: 1px solid var(--divider);
 }
 
 .email-wrapper {
-	padding-top: 20px;
+	padding-top: 0;
 }

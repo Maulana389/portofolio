@@ -21,17 +21,23 @@ const Contact = () => {
 	return (
 		<React.Fragment>
 			<Helmet>
-				<title>{`Contact | ${INFO.main.title}`}</title>
+				<title>{`Kontak | ${INFO.main.title}`}</title>
 				<meta name="description" content={currentSEO.description} />
 				<meta
 					name="keywords"
 					content={currentSEO.keywords.join(", ")}
 				/>
+				<link
+					rel="canonical"
+					href="https://portofolio-maulana-akbar.vercel.app/contact"
+				/>
 			</Helmet>
 
 			<div className="page-content">
-				<NavBar active="contact" />
-				<div className="content-wrapper">
+				<header>
+					<NavBar active="contact" />
+				</header>
+				<main className="content-wrapper">
 					<div className="contact-logo-container">
 						<div className="contact-logo">
 							<Logo width={46} />
@@ -39,38 +45,49 @@ const Contact = () => {
 					</div>
 
 					<div className="contact-container">
-						<div className="title contact-title">
-							Let's Get in Touch: Ways to Connect with Me
-						</div>
+						<h1 className="title contact-title">
+							Mari Terhubung: Hubungi Maulana Akbar Wibowo
+						</h1>
 
-						<div className="subtitle contact-subtitle">
-							Feel free to reach out if you'd like to collaborate, discuss opportunities, or simply connect. You can contact me directly at
-							&nbsp;{" "}
+						<p className="subtitle contact-subtitle">
+							Jangan ragu untuk menghubungi saya jika Anda berminat
+							berkolaborasi dalam proyek perangkat lunak, mendiskusikan
+							peluang karir/freelance backend engineering, atau sekadar
+							berjejaring. Anda dapat mengirimkan email langsung ke{" "}
 							<a href={`mailto:${INFO.main.email}`}>
 								{INFO.main.email}
 							</a>
-							. — I usually reply within 24 hours. You can also use the contact form on this website for quick messages. Additionally, I’m active on{" "}
+							. Saya biasanya membalas pesan dalam waktu 24 jam. Anda
+							juga dapat terhubung melalui{" "}
 							<a
-								href={INFO.socials.instagram}
+								href={INFO.socials.linkedin}
 								target="_blank"
 								rel="noreferrer"
 							>
-								{INFO.socials.instagram}
+								LinkedIn
+							</a>{" "}
+							atau mendiskusikan repositori di{" "}
+							<a
+								href={INFO.socials.github}
+								target="_blank"
+								rel="noreferrer"
+							>
+								GitHub
 							</a>
-							. where I share updates and connect with others. Looking forward to hearing from you!
-						</div>
+							.
+						</p>
 					</div>
 
-					<div className="socials-container">
+					<section className="socials-container" aria-label="Contact links">
 						<div className="contact-socials">
 							<Socials />
 						</div>
-					</div>
+					</section>
 
-					<div className="page-footer">
+					<footer className="page-footer">
 						<Footer />
-					</div>
-				</div>
+					</footer>
+				</main>
 			</div>
 		</React.Fragment>
 	);

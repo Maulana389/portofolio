@@ -1,40 +1,60 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 
-import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-	faTwitter,
 	faGithub,
-	faStackOverflow,
+	faLinkedin,
 	faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 
 import Logo from "../components/common/logo";
 import Footer from "../components/common/footer";
 import NavBar from "../components/common/navBar";
-import Article from "../components/homepage/article";
 import Works from "../components/homepage/works";
+import Skills from "../components/homepage/skills";
 import AllProjects from "../components/projects/allProjects";
 
 import INFO from "../data/user";
 import SEO from "../data/seo";
-import myArticles from "../data/articles";
 
 import "./styles/homepage.css";
 
-const skills = [
-	{ name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-	{ name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-	{ name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-	{ name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-	{ name: "Laravel", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" },
-	{ name: "Bootstrap", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
-	{ name: "Tailwind CSS", icon: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" },
-	{ name: "Flutter", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
-	{ name: "Flask", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" }
+const skillsList = [
+	{
+		name: "Java",
+		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+	},
+	{
+		name: "PHP (Laravel)",
+		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg",
+	},
+	{
+		name: "Node.js",
+		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+	},
+	{
+		name: "React",
+		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+	},
+	{
+		name: "MongoDB",
+		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+	},
+	{
+		name: "MySQL",
+		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+	},
+	{
+		name: "Git",
+		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+	},
+	{
+		name: "ClickUp",
+		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg",
+	},
 ];
-
 
 const Homepage = () => {
 	const [stayLogo, setStayLogo] = useState(false);
@@ -48,7 +68,6 @@ const Homepage = () => {
 	useEffect(() => {
 		const handleScroll = () => {
 			let scroll = Math.round(window.pageYOffset, 2);
-
 			let newLogoSize = 80 - (scroll * 4) / 10;
 
 			if (newLogoSize < oldLogoSize) {
@@ -76,7 +95,7 @@ const Homepage = () => {
 		position: stayLogo ? "fixed" : "relative",
 		top: stayLogo ? "3vh" : "auto",
 		zIndex: 999,
-		border: stayLogo ? "1px solid white" : "none",
+		border: stayLogo ? "1px solid var(--logo-border)" : "none",
 		borderRadius: stayLogo ? "50%" : "none",
 		boxShadow: stayLogo ? "0px 4px 10px rgba(0, 0, 0, 0.25)" : "none",
 	};
@@ -90,11 +109,25 @@ const Homepage = () => {
 					name="keywords"
 					content={currentSEO.keywords.join(", ")}
 				/>
+				<meta
+					property="og:title"
+					content={INFO.main.title}
+				/>
+				<meta
+					property="og:description"
+					content={currentSEO.description}
+				/>
+				<link
+					rel="canonical"
+					href="https://portofolio-maulana-akbar.vercel.app/"
+				/>
 			</Helmet>
 
 			<div className="page-content">
-				<NavBar active="home" />
-				<div className="content-wrapper">
+				<header>
+					<NavBar active="home" />
+				</header>
+				<main className="content-wrapper">
 					<div className="homepage-logo-container">
 						<div style={logoStyle}>
 							<Logo width={logoSize} link={false} />
@@ -102,15 +135,18 @@ const Homepage = () => {
 					</div>
 
 					<div className="homepage-container">
-						<div className="homepage-first-area">
+						<section
+							className="homepage-first-area"
+							aria-label="Hero introduction"
+						>
 							<div className="homepage-first-area-left-side">
-								<div className="title homepage-title">
+								<h1 className="title homepage-title">
 									{INFO.homepage.title}
-								</div>
+								</h1>
 
-								<div className="subtitle homepage-subtitle">
+								<p className="subtitle homepage-subtitle">
 									{INFO.homepage.description}
-								</div>
+								</p>
 							</div>
 
 							<div className="homepage-first-area-right-side">
@@ -118,76 +154,125 @@ const Homepage = () => {
 									<div className="homepage-image-wrapper">
 										<img
 											src="photo profile.png"
-											alt="about"
-											className="homepage-image w-5" style={{ width: "200px" }}
+											alt="Foto Profil Maulana Akbar Wibowo"
+											className="homepage-image"
 										/>
 									</div>
 								</div>
 							</div>
-						</div>
+						</section>
 
-						<div className="homepage-socials">
+						<div
+							className="homepage-socials"
+							role="list"
+							aria-label="Social media links"
+						>
 							<a
 								href={INFO.socials.github}
 								target="_blank"
 								rel="noreferrer"
+								aria-label="GitHub Profile"
+								role="listitem"
 							>
 								<FontAwesomeIcon
 									icon={faGithub}
 									className="homepage-social-icon"
+									aria-hidden="true"
+								/>
+							</a>
+							<a
+								href={INFO.socials.linkedin}
+								target="_blank"
+								rel="noreferrer"
+								aria-label="LinkedIn Profile"
+								role="listitem"
+							>
+								<FontAwesomeIcon
+									icon={faLinkedin}
+									className="homepage-social-icon"
+									aria-hidden="true"
 								/>
 							</a>
 							<a
 								href={INFO.socials.instagram}
 								target="_blank"
 								rel="noreferrer"
+								aria-label="Instagram Profile"
+								role="listitem"
 							>
 								<FontAwesomeIcon
 									icon={faInstagram}
 									className="homepage-social-icon"
+									aria-hidden="true"
 								/>
 							</a>
 							<a
 								href={`mailto:${INFO.main.email}`}
-								target="_blank"
-								rel="noreferrer"
+								aria-label="Send Email"
+								role="listitem"
 							>
 								<FontAwesomeIcon
-									icon={faMailBulk}
+									icon={faEnvelope}
 									className="homepage-social-icon"
+									aria-hidden="true"
 								/>
 							</a>
 						</div>
 
-						<div className="homepage-skills">
-							<h2 className="homepage-section-title">My Skills</h2>
-							<div className="skills-grid">
-								{skills.map((skill, index) => (
-									<div key={index} className="skill-card">
-										<img src={skill.icon} alt={skill.name} className="skill-icon" />
+						<section className="homepage-skills" aria-label="Core Tech Stack">
+							<h2 className="homepage-section-title">
+								Core Tech Stack &amp; Tools
+							</h2>
+							<div className="skills-grid" role="list">
+								{skillsList.map((skill, index) => (
+									<div
+										key={index}
+										className="skill-card"
+										role="listitem"
+										aria-label={skill.name}
+									>
+										<img
+											src={skill.icon}
+											alt={`${skill.name} logo`}
+											className="skill-icon"
+											loading="lazy"
+										/>
 										<p>{skill.name}</p>
 									</div>
 								))}
 							</div>
-						</div>
+						</section>
 
-
-						<div className="homepage-projects">
+						<section
+							className="homepage-projects"
+							aria-label="Featured Projects"
+						>
+							<h2
+								className="homepage-section-title"
+								style={{ marginBottom: "0" }}
+							>
+								Featured Projects
+							</h2>
 							<AllProjects />
-						</div>
+						</section>
 
-						<div className="homepage-after-title">
-
+						<section
+							className="homepage-after-title"
+							aria-label="Experience and skills summary"
+						>
 							<div className="homepage-works">
 								<Works />
 							</div>
-						</div>
+							<div className="homepage-skills-summary">
+								<Skills />
+							</div>
+						</section>
 
-						<div className="page-footer">
+						<footer className="page-footer">
 							<Footer />
-						</div>
+						</footer>
 					</div>
-				</div>
+				</main>
 			</div>
 		</React.Fragment>
 	);

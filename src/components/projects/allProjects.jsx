@@ -17,7 +17,9 @@ const AllProjects = () => {
 						description={project.description}
 						linkText={project.linkText}
 						link={project.link}
+						tech={project.tech}
 					/>
+
 				</div>
 			))}
 		</div>

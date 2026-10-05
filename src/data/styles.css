@@ -1,14 +1,90 @@
-:root {
-	/* ------- colors ------- */
-	--primary-color: #27272a;
-	--secondary-color: #65656d;
-	--tertiary-color: #acacb4;
-	--quaternary-color: #e4e4e7;
-	--link-color: #14b8a6;
-	/* ---------------------- */
+/* ============================================
+   DESIGN TOKENS — Single source of truth
+   Applied via data-theme attribute on <html>
+   ============================================ */
 
-	/* ------- fonts ------- */
-	--primary-font: "Heebo", sans-serif;
-	--secondary-font: "Roboto", sans-serif;
-	/* --------------------- */
+/* Default = dark (prevents flash on first load) */
+:root,
+[data-theme="dark"] {
+	/* Background layers */
+	--bg-primary: #0d1117;
+	--bg-secondary: #161b22;
+	--bg-tertiary: #21262d;
+
+	/* Text */
+	--primary-color: #e6edf3;
+	--secondary-color: #8b949e;
+	--tertiary-color: #30363d;
+
+	/* Accent */
+	--link-color: #58a6ff;
+	--accent-color: #6e76f3;
+	--accent-color-rgb: 110, 118, 243;
+	--accent-glow: rgba(110, 118, 243, 0.2);
+
+	/* Glass */
+	--glass-bg: rgba(22, 27, 34, 0.72);
+	--glass-border: rgba(255, 255, 255, 0.08);
+	--glass-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.4);
+	--glass-hover-bg: rgba(33, 38, 45, 0.80);
+	--glass-hover-border: rgba(110, 118, 243, 0.45);
+
+	/* Ambient orb colours */
+	--orb-a: rgba(88, 166, 255, 0.14);
+	--orb-b: rgba(110, 118, 243, 0.12);
+
+	/* Scrollbar */
+	--scrollbar-thumb: #30363d;
+
+	/* Divider */
+	--divider: rgba(255, 255, 255, 0.07);
+
+	/* Logo border */
+	--logo-border: rgba(255, 255, 255, 0.18);
+
+	/* Fonts */
+	--primary-font: "Inter", "Heebo", sans-serif;
+	--secondary-font: "Inter", "Roboto", sans-serif;
+}
+
+[data-theme="light"] {
+	/* Background layers */
+	--bg-primary: #f6f8fa;
+	--bg-secondary: #ffffff;
+	--bg-tertiary: #eaeef2;
+
+	/* Text */
+	--primary-color: #1c2128;
+	--secondary-color: #57606a;
+	--tertiary-color: #d0d7de;
+
+	/* Accent */
+	--link-color: #0969da;
+	--accent-color: #4f46e5;
+	--accent-color-rgb: 79, 70, 229;
+	--accent-glow: rgba(79, 70, 229, 0.12);
+
+	/* Glass */
+	--glass-bg: rgba(255, 255, 255, 0.78);
+	--glass-border: rgba(0, 0, 0, 0.08);
+	--glass-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.06);
+	--glass-hover-bg: rgba(255, 255, 255, 0.95);
+	--glass-hover-border: rgba(79, 70, 229, 0.35);
+
+	/* Ambient orb colours */
+	--orb-a: rgba(9, 105, 218, 0.07);
+	--orb-b: rgba(79, 70, 229, 0.07);
+
+	/* Scrollbar */
+	--scrollbar-thumb: #d0d7de;
+
+	/* Divider */
+	--divider: rgba(0, 0, 0, 0.07);
+
+	/* Logo border */
+	--logo-border: rgba(0, 0, 0, 0.12);
+
+	/* Fonts */
+	--primary-font: "Inter", "Heebo", sans-serif;
+	--secondary-font: "Inter", "Roboto", sans-serif;
 }

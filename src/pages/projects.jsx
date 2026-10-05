@@ -21,39 +21,51 @@ const Projects = () => {
 	return (
 		<React.Fragment>
 			<Helmet>
-				<title>{`Projects | ${INFO.main.title}`}</title>
+				<title>{`Proyek | ${INFO.main.title}`}</title>
 				<meta name="description" content={currentSEO.description} />
 				<meta
 					name="keywords"
 					content={currentSEO.keywords.join(", ")}
 				/>
+				<link
+					rel="canonical"
+					href="https://portofolio-maulana-akbar.vercel.app/projects"
+				/>
 			</Helmet>
 
 			<div className="page-content">
-				<NavBar active="projects" />
-				<div className="content-wrapper">
+				<header>
+					<NavBar active="projects" />
+				</header>
+				<main className="content-wrapper">
 					<div className="projects-logo-container">
 						<div className="projects-logo">
 							<Logo width={46} />
 						</div>
 					</div>
 					<div className="projects-container">
-						<div className="title projects-title">
-							Fullstack Developer & AI Enthusiast — turning ideas into reliable software solutions.
-						</div>
+						<h1 className="title projects-title">
+							Software Engineer &amp; Backend Developer — Mengubah ide menjadi
+							solusi perangkat lunak yang andal.
+						</h1>
 
-						<div className="subtitle projects-subtitle">
-							I have developed a range of projects that demonstrate my skills in web development, backend engineering, and AI implementation. Each project reflects my ability to design, build, and deploy functional solutions—from e-commerce platforms and booking systems to machine learning applications. Many of these projects are open-source, showcasing clean code, scalability, and best practices, and I welcome anyone to review or contribute. These experiences highlight not only my technical abilities but also my commitment to continuous learning, problem-solving, and delivering value through software.
-						</div>
+						<p className="subtitle projects-subtitle">
+							Saya telah mengembangkan berbagai proyek yang memperlihatkan
+							keahlian saya dalam backend engineering, arsitektur REST API,
+							pengembangan modul sistem web (seperti Leave System &amp;
+							Reservation Platform), serta aplikasi MERN stack. Setiap proyek
+							dirancang dengan fokus pada skalabilitas, otentikasi aman, dan
+							kemudahan pengoperasian bagi pengguna akhir.
+						</p>
 
-						<div className="projects-list">
+						<section className="projects-list" aria-label="Project list">
 							<AllProjects />
-						</div>
+						</section>
 					</div>
-					<div className="page-footer">
+					<footer className="page-footer">
 						<Footer />
-					</div>
-				</div>
+					</footer>
+				</main>
 			</div>
 		</React.Fragment>
 	);

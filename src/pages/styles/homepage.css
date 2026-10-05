@@ -1,114 +1,156 @@
 @import "../../data/styles.css";
 
+/* =============================================
+   HOMEPAGE STRUCTURE
+   ============================================= */
+
 .homepage-logo-container {
 	display: flex;
 	justify-content: left;
 	align-items: center;
-	padding-top: 130px;
+	padding-top: 110px;
 }
 
 .homepage-container {
-	padding-top: 25px;
+	padding-top: 20px;
 }
+
+/* =============================================
+   HERO SECTION
+   ============================================= */
 
 .homepage-first-area {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	gap: 40px;
+	padding-bottom: 8px;
 }
 
 .homepage-first-area-left-side {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
+	flex: 1;
+	min-width: 0;
 }
 
 .homepage-title {
-	width: 85% !important;
+	width: 100% !important;
 }
 
 .homepage-subtitle {
-	width: 85% !important;
+	width: 100% !important;
 }
 
 .homepage-first-area-right-side {
 	display: flex;
 	align-items: center;
+	flex-shrink: 0;
 }
 
 .homepage-image-container {
-	width: 370px;
-	height: 370px;
+	width: 260px;
+	height: 260px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .homepage-image-wrapper {
+	width: 100%;
+	height: 100%;
 	overflow: hidden;
-	border-radius: 10%;
-	transform: rotate(3deg);
+	border-radius: 20px;
+	border: 1px solid var(--glass-border);
+	box-shadow: var(--glass-shadow);
+	position: relative;
 }
 
-.homepage-image-wrapper img {
-	width: 100%;
+.homepage-image {
+	width: 100% !important;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	border-radius: 0 !important;
 }
+
+/* Remove the inline rotate style — use CSS only */
+.homepage-image-wrapper::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: 20px;
+	border: 1px solid var(--glass-border);
+}
+
+/* =============================================
+   SOCIAL ICONS ROW
+   ============================================= */
 
 .homepage-socials {
 	display: flex;
-	justify-content: left;
 	align-items: center;
-	padding-top: 30px;
+	padding-top: 28px;
+	gap: 4px;
 }
 
 .homepage-social-icon {
-	padding-right: 20px;
-	font-size: 25px;
-	transition: color 0.2s ease-in-out;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	font-size: 18px;
 	color: var(--secondary-color);
+	border-radius: 50%;
+	transition: color 0.2s ease, background-color 0.2s ease,
+		transform 0.2s ease;
 }
 
 .homepage-social-icon:hover {
-	color: var(--primary-color);
+	color: var(--accent-color);
+	background-color: rgba(var(--accent-color-rgb), 0.12);
+	transform: translateY(-2px);
 }
 
-.homepage-after-title {
-	display: flex;
-}
-
-.homepage-projects {
-	flex-basis: 300px;
-	padding-top: 40px;
-}
-
-.homepage-articles {
-	flex-basis: 900px;
-	padding-top: 30px;
-	margin-left: -30px;
-}
-
-.homepage-article {
-	padding-bottom: 5px;
-}
-
-.homepage-works {
-	flex-basis: 600px;
-	padding-top: 30px;
-}
-.homepage-skills {
-	margin-top: 50px;
-	text-align: center;
-}
+/* =============================================
+   SECTION HEADINGS
+   ============================================= */
 
 .homepage-section-title {
-	font-size: 28px;
-	font-weight: bold;
-	margin-bottom: 20px;
+	font-size: 20px;
+	font-weight: 700;
+	margin: 0 0 20px 0;
+	color: var(--primary-color);
+	letter-spacing: -0.3px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.homepage-section-title::before {
+	content: "";
+	display: inline-block;
+	width: 4px;
+	height: 20px;
+	background: var(--accent-color);
+	border-radius: 2px;
+	flex-shrink: 0;
+}
+
+/* =============================================
+   SKILLS GRID
+   ============================================= */
+
+.homepage-skills {
+	margin-top: 52px;
 }
 
 .skills-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-	gap: 20px;
-	justify-items: center;
-	align-items: center;
+	grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
+	gap: 12px;
 }
 
 .skill-card {
@@ -116,75 +158,148 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background: #fff;
-	padding: 15px;
-	border-radius: 10px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	transition: transform 0.2s ease;
+	padding: 16px 10px;
+	background: var(--glass-bg);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+	border: 1px solid var(--glass-border);
+	box-shadow: var(--glass-shadow);
+	border-radius: 14px;
+	transition: background-color 0.2s ease, border-color 0.2s ease,
+		box-shadow 0.2s ease, transform 0.2s ease;
+	cursor: default;
 }
 
 .skill-card:hover {
-	transform: translateY(-5px);
+	background: var(--glass-hover-bg);
+	border-color: var(--glass-hover-border);
+	transform: translateY(-3px);
+	box-shadow: 0 8px 24px rgba(var(--accent-color-rgb), 0.15);
+}
+
+.skill-card p {
+	margin: 8px 0 0 0;
+	font-size: 12px;
+	font-weight: 600;
+	color: var(--primary-color);
+	text-align: center;
+	line-height: 1.3;
 }
 
 .skill-icon {
-	width: 50px;
-	height: 50px;
-	margin-bottom: 10px;
+	width: 36px;
+	height: 36px;
+	object-fit: contain;
 }
+
+/* =============================================
+   FEATURED PROJECTS SECTION
+   ============================================= */
+
+.homepage-projects {
+	padding-top: 52px;
+}
+
+/* =============================================
+   EXPERIENCE + SKILLS SUMMARY ROW
+   ============================================= */
+
+.homepage-after-title {
+	display: flex;
+	gap: 24px;
+	padding-top: 52px;
+	align-items: flex-start;
+}
+
+.homepage-works {
+	flex: 1.5;
+	min-width: 0;
+}
+
+.homepage-skills-summary {
+	flex: 1;
+	min-width: 0;
+	padding-top: 0 !important;
+}
+
+/* =============================================
+   RESPONSIVE — 1024px
+   ============================================= */
 
 @media (max-width: 1024px) {
 	.homepage-first-area {
-		flex-direction: column;
+		flex-direction: column-reverse;
+		gap: 24px;
 	}
 
 	.homepage-first-area-left-side {
-		display: flex;
-		flex-direction: column; /* Changed: set direction to column */
-		align-items: flex-start;
 		width: 100%;
-		order: 2;
-	}
-
-	.homepage-title {
-		width: 100% !important;
-		margin-top: 20px;
-		order: 2;
-	}
-
-	.homepage-subtitle {
-		width: 100% !important;
-		margin-top: 10px;
-		order: 3;
 	}
 
 	.homepage-first-area-right-side {
 		width: 100%;
-		order: 1;
+		justify-content: flex-start;
 	}
 
 	.homepage-image-container {
-		padding-top: 50px;
-		padding-bottom: 50px;
-		margin-left: 10px;
-		order: 1;
+		width: 200px;
+		height: 200px;
 	}
 
 	.homepage-after-title {
 		flex-direction: column;
+		gap: 24px;
 	}
 
-	.homepage-projects {
-		flex-basis: auto;
+	.homepage-works,
+	.homepage-skills-summary {
+		width: 100%;
+	}
+}
+
+/* =============================================
+   RESPONSIVE — 768px
+   ============================================= */
+
+@media (max-width: 768px) {
+	.homepage-logo-container {
+		padding-top: 90px;
 	}
 
-	.homepage-articles {
-		flex-basis: auto;
+	.skills-grid {
+		grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
 	}
 
-	.homepage-works {
-		flex-basis: auto;
-		margin-left: -25px;
-		margin-right: -25px;
+	.homepage-image-container {
+		width: 160px;
+		height: 160px;
+	}
+}
+
+/* =============================================
+   RESPONSIVE — 480px
+   ============================================= */
+
+@media (max-width: 480px) {
+	.homepage-logo-container {
+		padding-top: 80px;
+	}
+
+	.skills-grid {
+		grid-template-columns: repeat(4, 1fr);
+		gap: 8px;
+	}
+
+	.skill-card {
+		padding: 12px 6px;
+	}
+
+	.skill-card p {
+		font-size: 10px;
+	}
+
+	.skill-icon {
+		width: 28px;
+		height: 28px;
 	}
 }

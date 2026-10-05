@@ -2,7 +2,6 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
-	faTwitter,
 	faGithub,
 	faLinkedin,
 	faInstagram,
@@ -14,17 +13,20 @@ import "./styles/socials.css";
 
 const Socials = () => {
 	return (
-		<div className="socials">
-
+		<nav className="socials" aria-label="Social links">
 			<div className="social">
-				<a href={INFO.socials.github} target="_blank" rel="noreferrer">
-					<div className="social-icon">
-						<FontAwesomeIcon
-							icon={faGithub}
-							className="social-icon"
-						/>
-					</div>
-					<div className="social-text">Follow on GitHub</div>
+				<a
+					href={INFO.socials.github}
+					target="_blank"
+					rel="noreferrer"
+					aria-label="GitHub Profile"
+				>
+					<FontAwesomeIcon
+						icon={faGithub}
+						className="social-icon"
+						aria-hidden="true"
+					/>
+					<span className="social-text">Follow on GitHub</span>
 				</a>
 			</div>
 
@@ -33,14 +35,14 @@ const Socials = () => {
 					href={INFO.socials.linkedin}
 					target="_blank"
 					rel="noreferrer"
+					aria-label="LinkedIn Profile"
 				>
-					<div className="social-icon">
-						<FontAwesomeIcon
-							icon={faLinkedin}
-							className="social-icon"
-						/>
-					</div>
-					<div className="social-text">Follow on LinkedIn</div>
+					<FontAwesomeIcon
+						icon={faLinkedin}
+						className="social-icon"
+						aria-hidden="true"
+					/>
+					<span className="social-text">Follow on LinkedIn</span>
 				</a>
 			</div>
 
@@ -49,14 +51,14 @@ const Socials = () => {
 					href={INFO.socials.instagram}
 					target="_blank"
 					rel="noreferrer"
+					aria-label="Instagram Profile"
 				>
-					<div className="social-icon">
-						<FontAwesomeIcon
-							icon={faInstagram}
-							className="social-icon"
-						/>
-					</div>
-					<div className="social-text">Follow on Instagram</div>
+					<FontAwesomeIcon
+						icon={faInstagram}
+						className="social-icon"
+						aria-hidden="true"
+					/>
+					<span className="social-text">Follow on Instagram</span>
 				</a>
 			</div>
 
@@ -64,18 +66,18 @@ const Socials = () => {
 				<div className="email-wrapper">
 					<a
 						href={`mailto:${INFO.main.email}`}
-						target="_blank"
-						rel="noreferrer"
+						aria-label={`Send email to ${INFO.main.email}`}
 					>
-						<div className="social-icon">
-							<FontAwesomeIcon icon={faEnvelope} />
-						</div>
-
-						<div className="social-text">{INFO.main.email}</div>
+						<FontAwesomeIcon
+							icon={faEnvelope}
+							className="social-icon"
+							aria-hidden="true"
+						/>
+						<span className="social-text">{INFO.main.email}</span>
 					</a>
 				</div>
 			</div>
-		</div>
+		</nav>
 	);
 };
 

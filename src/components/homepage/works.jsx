@@ -10,46 +10,46 @@ const Works = () => {
 		<div className="works">
 			<Card
 				icon={faBriefcase}
-				title="Work"
+				title="Pengalaman Kerja & Freelance"
 				body={
 					<div className="works-body">
 						<div className="work">
 							<img
 								src="./edu.png"
-								alt="facebook"
+								alt="University Lab"
 								className="work-image"
 							/>
-							<div className="work-title">University Lab</div>
-							<div className="work-subtitle">
-								Lab Assistant
+							<div className="work-details">
+								<div className="work-title">University Lab</div>
+								<div className="work-subtitle">Lab Assistant</div>
 							</div>
-							<div className="work-duration">2024 - Present</div>
+							<div className="work-duration">2024 - Sekarang</div>
 						</div>
 
 						<div className="work">
 							<img
 								src="./freelance.jpg"
-								alt="facebook"
+								alt="Freelance"
 								className="work-image"
 							/>
-							<div className="work-title">Freelance</div>
-							<div className="work-subtitle">
-								Software Engineer
+							<div className="work-details">
+								<div className="work-title">Freelance</div>
+								<div className="work-subtitle">Software Engineer</div>
 							</div>
-							<div className="work-duration">2024 - Present</div>
+							<div className="work-duration">2024 - Sekarang</div>
 						</div>
 
 						<div className="work">
 							<img
 								src="./logo-english.png"
-								alt="twitter"
+								alt="EnglishSpace"
 								className="work-image"
 							/>
-							<div className="work-title">EnglishSpace – Intern</div>
-							<div className="work-subtitle">
-								Web developer
+							<div className="work-details">
+								<div className="work-title">EnglishSpace</div>
+								<div className="work-subtitle">Web Developer Intern</div>
 							</div>
-							<div className="work-duration">July 2022 - October 2022</div>
+							<div className="work-duration">Jul 2022 - Okt 2022</div>
 						</div>
 					</div>
 				}
@@ -59,3 +59,4 @@ const Works = () => {
 };
 
 export default Works;
+

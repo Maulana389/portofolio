@@ -21,17 +21,23 @@ const About = () => {
 	return (
 		<React.Fragment>
 			<Helmet>
-				<title>{`About | ${INFO.main.title}`}</title>
+				<title>{`Tentang | ${INFO.main.title}`}</title>
 				<meta name="description" content={currentSEO.description} />
 				<meta
 					name="keywords"
 					content={currentSEO.keywords.join(", ")}
 				/>
+				<link
+					rel="canonical"
+					href="https://portofolio-maulana-akbar.vercel.app/about"
+				/>
 			</Helmet>
 
 			<div className="page-content">
-				<NavBar active="about" />
-				<div className="content-wrapper">
+				<header>
+					<NavBar active="about" />
+				</header>
+				<main className="content-wrapper">
 					<div className="about-logo-container">
 						<div className="about-logo">
 							<Logo width={46} />
@@ -41,30 +47,40 @@ const About = () => {
 					<div className="about-container">
 						<div className="about-main">
 							<div className="about-right-side">
-								<div className="title about-title">
+								<h1 className="title about-title">
 									{INFO.about.title}
-								</div>
+								</h1>
 
-								<div className="subtitle about-subtitle">
+								<p
+									className="subtitle about-subtitle"
+									style={{ whiteSpace: "pre-line" }}
+								>
 									{INFO.about.description}
-								</div>
+								</p>
 							</div>
 
-							<div className="about-left-side">	
-
+							<div className="about-left-side">
+								<div className="about-image-container">
+									<img
+										src="photo profile.png"
+										alt="Profil Maulana Akbar Wibowo"
+									/>
+								</div>
 								<div className="about-socials">
 									<Socials />
 								</div>
 							</div>
 						</div>
+
 						<div className="about-socials-mobile">
 							<Socials />
 						</div>
 					</div>
-					<div className="page-footer">
+
+					<footer className="page-footer">
 						<Footer />
-					</div>
-				</div>
+					</footer>
+				</main>
 			</div>
 		</React.Fragment>
 	);

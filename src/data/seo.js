@@ -2,37 +2,38 @@ const SEO = [
 	{
 		page: "home",
 		description:
-			"I am a backend developer with expertise in Node.js. I have experience in building scalable, secure and reliable web applications using various frameworks and technologies.",
-		keywords: ["Maulana", "Maulana Akbar", "Maulana Akbar w"],
+			"Portofolio Maulana Akbar Wibowo - Software Engineer & Backend Developer spesialis Java, PHP (Laravel), MERN Stack (MongoDB, Express.js, React, Node.js), Git/GitHub, dan ClickUp.",
+		keywords: ["Maulana Akbar Wibowo", "Software Engineer", "Backend Developer", "Java", "Laravel", "MERN Stack", "React", "Node.js"],
 	},
 
 	{
 		page: "about",
 		description:
-			"I am a backend developer with expertise in Node.js. I have experience in building scalable, secure and reliable web applications using various frameworks and technologies.",
-		keywords: ["Maulana", "Maulana A", "Maulana Akbar w"],
+			"Tentang Maulana Akbar Wibowo - Software Engineer & Backend Developer dengan pengalaman merancang REST API, modul sistem backend, dan aplikasi web modern.",
+		keywords: ["Maulana Akbar Wibowo", "Backend Engineer Indonesia", "Laravel Developer", "Java Software Engineer"],
 	},
 
 	{
 		page: "articles",
 		description:
-			"Chronological collection of my long-form thoughts on programming, leadership, product design, and more.",
-		keywords: ["Maulana", "Maulana A", "Maulana Akbar w"],
+			"Kumpulan artikel dan tulisan teknik Maulana Akbar Wibowo mengenai backend architecture, web development, dan best practices software engineering.",
+		keywords: ["Maulana Akbar Wibowo Artikel", "Backend Engineering Blog", "Web Development Articles"],
 	},
 
 	{
 		page: "projects",
 		description:
-			"I've worked on a variety of projects over the years and I'm proud of the progress I've made. Many of these projects are open-source and available for others to explore and contribute to.",
-		keywords: ["Maulana", "Maulana A", "Maulana Akbar w"],
+			"Daftar proyek dan portofolio pengembangan sistem backend & aplikasi web buatan Maulana Akbar Wibowo seperti TriganaAir Leave System, TemuDokterku, Toko Sembako Rona, dll.",
+		keywords: ["Maulana Akbar Wibowo Projects", "TriganaAir Leave System", "TemuDokterku", "MERN Stack E-commerce"],
 	},
 
 	{
 		page: "contact",
 		description:
-			"If you're interested in collaborating on a project, feel free to reach out to me. I'm always open to new ideas and opportunities.",
-		keywords: ["Maulana", "Maulana A", "Maulana Akbar w"],
+			"Hubungi Maulana Akbar Wibowo untuk kolaborasi proyek software engineering, backend development, atau konsultasi web development.",
+		keywords: ["Kontak Maulana Akbar Wibowo", "Sewa Backend Developer", "Hire Software Engineer Indonesia"],
 	},
 ];
 
 export default SEO;
+
