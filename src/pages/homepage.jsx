@@ -164,7 +164,6 @@ const Homepage = () => {
 
 						<div
 							className="homepage-socials"
-							role="list"
 							aria-label="Social media links"
 						>
 							<a
@@ -223,7 +222,7 @@ const Homepage = () => {
 							<h2 className="homepage-section-title">
 								Core Tech Stack &amp; Tools
 							</h2>
-							<div className="skills-grid" role="list">
+								<div className="skills-grid">
 								{skillsList.map((skill, index) => (
 									<div
 										key={index}

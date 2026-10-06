@@ -70,7 +70,7 @@ const NavBar = (props) => {
 			<nav className="navbar" aria-label="Main navigation">
 				<div className="nav-background">
 					{/* Desktop nav list */}
-					<ul className="nav-list" role="list">
+					<ul className="nav-list">
 						{navLinks.map(({ to, label, key }) => (
 							<li
 								key={key}
@@ -137,7 +137,7 @@ const NavBar = (props) => {
 						role="navigation"
 						aria-label="Mobile navigation"
 					>
-						<ul className="nav-mobile-list" role="list">
+						<ul className="nav-mobile-list">
 							{navLinks.map(({ to, label, key }) => (
 								<li
 									key={key}
